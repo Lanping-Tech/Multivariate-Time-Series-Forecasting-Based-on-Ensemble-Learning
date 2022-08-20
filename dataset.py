@@ -4,6 +4,7 @@ import numpy as np
 def read_data_from_file(file_path, window_size=4, stride=1):
     o_data = []
     df = pd.read_excel(file_path)
+    df[['AllocNodes', 'AllocCPUs', 'req_mem_per_cpu', 'Timelimit', 'CPUTimeRAW(s)', 'req_CPU', 'req_mem']] = df[['AllocNodes', 'AllocCPUs', 'req_mem_per_cpu', 'Timelimit', 'CPUTimeRAW(s)', 'req_CPU', 'req_mem']].apply(lambda x: (x - np.min(x)) / (np.max(x) - np.min(x)))
     job_names = df['Job_name'].unique()
     for job_name in job_names:
         o_data.append(df[df['Job_name'] == job_name].T.tail(7).T.values)

@@ -18,14 +18,14 @@ import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
 # data
-data_path = 'data/容器HPC运行数据.xlsx'
+data_path = 'data/容器HPC运行数据（2022.08.20）.xlsx'
 window_size = 3
 stride = 1
 input_shape = (window_size, 7)
 output_shape = 1
 
 # hyper parameters
-epochs = 1
+epochs = 20
 batch_size = 32
 
 # load data
