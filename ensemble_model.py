@@ -41,9 +41,9 @@ cnn = cnn_model(input_shape, output_shape)
 rnn = rnn_model(input_shape, output_shape)
 
 # define base models
-dnn_regressor = KerasRegressor(model=dnn, epochs=epochs, batch_size=batch_size, verbose=0)
-cnn_regressor = KerasRegressor(model=cnn, epochs=epochs, batch_size=batch_size, verbose=0)
-rnn_regressor = KerasRegressor(model=rnn, epochs=epochs, batch_size=batch_size, verbose=0)
+dnn_regressor = KerasRegressor(model=dnn, epochs=epochs, batch_size=batch_size, verbose=1)
+cnn_regressor = KerasRegressor(model=cnn, epochs=epochs, batch_size=batch_size, verbose=1)
+rnn_regressor = KerasRegressor(model=rnn, epochs=epochs, batch_size=batch_size, verbose=1)
 
 final_regressor = RandomForestRegressor(n_estimators=10, random_state=42)
 
